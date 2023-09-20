@@ -1,3 +1,4 @@
+# Solution for Exercise No.2 from Session No.1 of the course
 n, q = map(int, input().split())
 
 a = [x for x in map(int, input().split(' '))]
