@@ -1,38 +1,23 @@
-n = int(input())
+n = int(input()) # Btw, I'll use len(numbers)
 numbers = list(map(int, input().split(' ')))
+numbers.sort()
 
-O = {}
-result = {}
-
-def finding_middle_number() -> list:
-    if len(numbers) == 2:
-        middle_num = numbers[0]
-        
-    middle_num = numbers[int(len(numbers) / 2)] if len(numbers) % 2 == 1 else numbers[int(len(numbers) / 2)]
-    return middle_num # correspond index -> int(len(numbers) / 2)
+def finding_middle() -> int:
+    if n % 2 == 1: 
+        return numbers[int(len(numbers) / 2)]
+    else:
+        return numbers[int(len(numbers) / 2) - 1]
     
-def calculate():
-    idxs = [int(len(numbers) / 2) - 1, int(len(numbers) / 2), int(len(numbers) / 2) + 1]
-    
-    for middle_idx in idxs:
-        tmp = 0
-        for idx, elem in enumerate(numbers):
-            if idx == middle_idx: continue
-            tmp += abs(numbers[middle_idx] - elem)
-        
-        O[middle_idx] = tmp
+    return middle_numbers
 
-def calculate_min():
-    for key, value in O.items():
-        if value not in result:
-            result[value] = [key]
-        else:
-            result[value].append(key)
+def calculate_operations(mid:int) -> int:
+    operations = 0
+    for idx, elem in enumerate(numbers):
+        if elem == mid : continue
+        operations += abs(mid - elem)
+    return operations
     
-    min_results = result[min(result.keys())]
-    return min(min_results)
-
-if __name__ == "__main__":
-    calculate()
-    choiced = calculate_min()
-    print(numbers[choiced], min(result.keys()))
+if __name__ == '__main__':
+    middle_number = finding_middle()
+    operation_count = calculate_operations(mid=middle_number)
+    print(middle_number, operation_count, sep=' ')
