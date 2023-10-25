@@ -1,19 +1,19 @@
 import sys
 sys.setrecursionlimit(10**6)
 
-# def base(bin_:str, m:int) -> str:
-#     base_binary = [0 for z in range(m - len(bin_))]
-#     for num in bin_:
-#         base_binary.append(int(num))
-#     return base_binary
+def base(bin_:str, m:int) -> str:
+    base_binary = [0 for z in range(m - len(bin_))]
+    for num in bin_:
+        base_binary.append(int(num))
+    return base_binary
 
-# results = []
-# def cal(n:int):
-#     for j in range(2**n):
-#         binary_result = bin(j)[2:]
-#         correction = base(binary_result, n)
+results = []
+def cal(n:int):
+    for j in range(2**n):
+        binary_result = bin(j)[2:]
+        correction = base(binary_result, n)
 
-#         results.append("".join(map(str,correction)))
+        results.append("".join(map(str,correction)))
         
 
 
