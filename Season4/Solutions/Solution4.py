@@ -1,15 +1,15 @@
-answers = []
+import sys
 
-def another_way2(m:int):
+answers = []
+def cal(m:int):
     for j in range(2**m):
         answers.append(bin(j)[2:])
 
-def output(_answers:list):
+def base(_answers:list) -> list:
     return list(map(lambda x : x.zfill(n), answers))
-    
     
 if __name__ == '__main__':
     n = int(input())
-    another_way2(n)
-    result = output(answers)
+    cal(n)
+    result = base(answers)
     print(*result, sep='\n')
