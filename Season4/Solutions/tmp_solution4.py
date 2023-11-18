@@ -1,4 +1,5 @@
 import sys
+from rich import print
 def f():
     global base_2    
     zero_add = []
