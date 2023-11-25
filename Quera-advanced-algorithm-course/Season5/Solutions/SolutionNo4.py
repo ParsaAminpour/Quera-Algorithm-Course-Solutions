@@ -1,11 +1,4 @@
-def calculate(c:int):
-    i = 0
-    d= -1
-    while d != 0:
-        d = min(0, max(0, numbers[i] - c))
-        c = c - d
-    return c
-
+# in 15min
 if __name__ == '__main__':
     n, c = map(int, input().split(' '))
     numbers = [int(num) for num in input().split()]
