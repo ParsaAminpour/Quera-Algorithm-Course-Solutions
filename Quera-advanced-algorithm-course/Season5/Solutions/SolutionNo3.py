@@ -13,7 +13,7 @@ sorted_efficient_friuts = efficient_friuts_[np.argsort(efficient_friuts_[:, 0])]
 results = []
 init_energy = k
 for f in sorted_efficient_friuts:
-    if init_energy - f[0] > 0:
+    if init_energy - f[0] >= 0:
         results.append(list(f))
         init_energy += abs(f[1]-f[0]) # abs is not necessary in here
 
